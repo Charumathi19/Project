@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> TODO DATABASE</title>
+    </head>
+    <body style="background-color:rgb(244, 133, 190);">
+        <h1 style="color:rgb(43, 6, 168);">FLOWER DETAILS </h1>
+        <a href="/form">Create</a>
+        <table border="1" align="center">
+            <tr>
+
+                <th>FLOWERNAME</th>
+                <th>FLOWERCOLOR</th>
+                <th>COUNT</th>
+                <th>IMPORTDATE</th>
+                <th>PRICE</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+                {% for x in d: %}
+                <tr>
+                    <td>{{x.1}}</td>
+                    <td>{{x.2}}</td>
+                    <td>{{x.3}}</td>
+                    <td>{{x.4}}</td>
+                    <td>{{x.5}}</td>
+                    <td><a href="/edit/{{x.0}}"> Edit</a></td>
+                    <td><a href="/delete/{{x.0}}"> Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
